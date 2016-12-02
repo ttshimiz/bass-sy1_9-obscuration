@@ -1,0 +1,8 @@
+*.pyc
+**/*.png
+**/*.pickle
+**/*.pkl
+**/*checkpoints*
+**/*debuglog.txt
+**/*.py~
+**/*.log

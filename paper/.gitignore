@@ -1,0 +1,8 @@
+*.aux
+*.log
+*.out
+ms.pdf
+*.bbl
+*.blg
+*.synctex.gz
+msNotes.bib

@@ -750,7 +750,7 @@ Typeset using \LaTeX\ {\bf modern} style in AASTeX61}
 
 \def\frontmatter@title@format{\normalsize\centering}
 
-\def\frontmatter@title@below{\ifmodern\vskip12pt\fi}%
+\def\frontmatter@title@below{\vskip12pt}%
 
 \def\frontmatter@authorformat{\small\scshape
 \ifmodern
@@ -765,15 +765,15 @@ Typeset using \LaTeX\ {\bf modern} style in AASTeX61}
 }%
 
 
-\def\frontmatter@affiliationfont{\normalfont\footnotesize\it                         
-\ifmodern
-\baselineskip=14pt
-\rightskip-12pt plus 1fil                                                            
-\leftskip6pt \parindent-4pt   
-\fi                                                                                
+\def\frontmatter@affiliationfont{\normalfont\footnotesize\it
+\ifmodern\baselineskip=14pt\fi
+\iflongauthor\else
+\rightskip-12pt plus 1fil
+\leftskip6pt \parindent-4pt
+\fi
 }%
 
-\def\frontmatter@finalspace{\vskip-24pt}\vspace*{-\baselineskip}\vspace*{0.375in}
+\def\frontmatter@finalspace{\vskip-24pt}%\vspace*{-\baselineskip}\vspace*{0.375in}}
 
 \def\@separator{\\}%
 
@@ -996,7 +996,7 @@ Typeset using \LaTeX\ {\bf modern} style in AASTeX61}
      \setcounter{footnote}{\thefront@matter@foot@note}%
      \let\footnotetext=\old@foot@note@text
      \let\footnotemark=\old@foot@note@mark
-%   \clearpage
+   \clearpage
    \if@two@col
    \twocolumngrid
    \fi
@@ -6149,8 +6149,8 @@ needed. It will not do anything.^^J Please use
 
 \def\@affil@script#1#2#3#4{%
 %\ifmodern
-\ifmodern\vskip24pt\fi
-\global\firstaffilfalse%\fi
+\iffirstaffil\vskip24pt 
+\global\firstaffilfalse\fi%\fi
  \@ifnum{#1=\z@}{}{%
   \par
   \begingroup
@@ -6205,7 +6205,7 @@ needed. It will not do anything.^^J Please use
   \let\abstract\@undefined\let\endabstract\@undefined
   \titlepage@sw{%
    \vfil
-%   \clearpage
+   \clearpage
   }{}%
 \fi
 }%

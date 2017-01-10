@@ -2,6 +2,9 @@
 
 \usepackage{amssymb,amsmath}
 
+\newcommand{\halpha}{H$\alpha$}
+\newcommand{\nh}{$N_{\rm H}$}
+
 \received{}
 \revised{}
 \accepted{}
@@ -26,23 +29,32 @@
 \begin{abstract}
 \end{abstract}
 
-\keywords{galaxies: active -- galaxies: Seyfert -- galaxies: nuclei}
+\keywords{galaxies: active -- galaxies: nuclei -- galaxies: Seyfert}
 
 \section{Introduction}\label{sec:intro}
-\section{Data}\label{sec:data}
+\section{Sample and Data}\label{sec:data}
+Our parent sample consists of all AGN in the BAT AGN Spectroscopic Survey (BASS; Koss et al. in preparation). BASS analysed both new and archival optical spectra for a large fraction \authorcomment1{need numbers here} of the AGN detected as part of the 70-month \textit{Swift} Burst Alert Telescope (BAT) \citep{Gehrels:2004qf, Barthelmy:2005ul} catalogue \citep{Baumgartner:2013fq}. \textit{Swift}/BAT has been continuously surveying the entire sky at high energies (14--195 keV) that allows for nearly complete samples of AGN up to the Compton thick limit ($N_{\rm H} < 10^{24}$ cm$^{-2}$) and reduces selection effects associated with host galaxy contamination and obscuration.
+
+For this work, we need reliable measurements of the broad \halpha{} flux, intrinsic hard X-ray flux, and X-ray absorbing column density. Therefore, we chose all AGN with detected broad \halpha{} from the original BASS analysis as well as AGN that were part of the BASS X-ray spectral analysis presented in Ricci et al 2017, submitted. The key measurements obtained from the X-ray spectral analysis are \nh{} estimates and absorption corrected 14--150 keV flux (hereafter referred to as the intrinsic X-ray flux). 
+
+Broad \halpha{} and intrinsic X-ray fluxes were converted to luminosities using either the redshift independent distances compiled from the NASA/IPAC Extragalactic Database\footnote{\url{http://ned.ipac.caltech.edu/}} or luminosity distances calculated based on the measured redshifts from the spectral analysis and our chosen cosmology ($H_{0}=70$ km s$^{-1}$ Mpc$^{-1}$, $\Omega_{m} = 0.3$).
+
+We limited our sample to those AGN with a Seyfert type classified according to the \citep{Winkler:1992kx} scheme. This cut resulted in 594 AGN. Of these, 5 sources do not have reliable distance measurements and were immediately disregarded. 590 of the AGN have available \nh{} and intrinsic X-ray flux measurements and 297 of the AGN have a detected broad \halpha{} component. 3 of the AGN with a broad \halpha{} component are detected with a significance less than 5 so we also remove these from the sample.
+ 
+ 
 \section{Results}\label{sec:results}
 \section{Discussion}\label{sec:discuss}
 \section{Conclusions}\label{sec:conclude}
 
 \acknowledgments
-\facilities{}
-\software{%
-	\textsl{astropy} \citep{Astropy:2013ek},
-	\textsl{pandas} \citep{McKinney:2010em},
-	\textsl{matplotlib} \citep{Hunter:2007},
-	\textsl{numpy} \citep{vanderWalt:2011we},
-	\textsl{scipy} \citep{Jones:2001ch}
-}
+%\facilities{}
+%\software{%
+%	\textsl{astropy} \citep{Astropy:2013ek},
+%	\textsl{pandas} \citep{McKinney:2010em},
+%	\textsl{matplotlib} \citep{Hunter:2007},
+%	\textsl{numpy} \citep{vanderWalt:2011we},
+%	\textsl{scipy} \citep{Jones:2001ch}
+%}
 	
 \bibliographystyle{aasjournal}
 \bibliography{/Users/ttshimiz/Dropbox/Research/my_bib}
